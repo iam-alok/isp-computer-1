@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Online Admission | ISP Computer Institute Katni</title>
+<meta name="description" content="Apply online for admission at ISP Computer Institute Katni. Fill out the form and secure your seat in your preferred computer course."/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.admission-wrap{max-width:760px;margin:0 auto;}
+.progress-bar-wrap{background:var(--glass);border-radius:50px;height:6px;margin-bottom:2.5rem;overflow:hidden;}
+.progress-bar-fill{height:100%;background:var(--grad);border-radius:50px;transition:width .4s ease;width:0%;}
+.step-indicators{display:flex;justify-content:space-between;margin-bottom:2.5rem;position:relative;}
+.step-indicators::before{content:'';position:absolute;top:18px;left:0;right:0;height:2px;background:var(--border);z-index:0;}
+.step-dot-wrap{display:flex;flex-direction:column;align-items:center;gap:.5rem;z-index:1;}
+.step-dot{width:36px;height:36px;border-radius:50%;background:var(--glass);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:700;transition:all .3s;color:var(--text2);}
+.step-dot.active{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 0 20px rgba(0,212,255,.4);}
+.step-label{font-size:.75rem;color:var(--text2);font-weight:500;}
+.form-step{display:none;}
+.form-step.active{display:block;animation:fadeInUp .4s ease;}
+.form-card{background:var(--glass);border:1px solid var(--border);border-radius:24px;padding:2.5rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;}
+.form-nav{display:flex;justify-content:space-between;margin-top:2rem;gap:1rem;}
+.review-table{width:100%;border-collapse:collapse;margin-top:1rem;}
+.review-table tr{border-bottom:1px solid var(--border);}
+.review-table td{padding:.75rem 0;font-size:.9rem;}
+.review-table td:first-child{color:var(--text2);width:45%;}
+.review-table td:last-child{color:var(--text);font-weight:500;}
+#successMsg{display:none;flex-direction:column;align-items:center;text-align:center;padding:3rem;background:var(--glass);border:1px solid var(--border);border-radius:24px;}
+#successMsg .big-check{font-size:5rem;animation:bounce 1s ease;}
+#successMsg h2{font-size:2rem;margin:1rem 0 .5rem;}
+#successMsg p{color:var(--text2);}
+@media(max-width:600px){.form-row{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" onclick="closeMobile()">✕</button>
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="courses.html" onclick="closeMobile()">Courses</a>
+  <a href="admission.html" onclick="closeMobile()">Admission</a>
+  <a href="certificate.html" onclick="closeMobile()">Certificate</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">ISP</div>
+    <div class="nav-logo-text">ISP <span>Institute</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="admission.html" class="active">Admission</a></li>
+    <li><a href="certificate.html">Certificate</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="admission.html" class="nav-cta">Enroll Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMobile()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <span class="section-tag">Online Admission</span>
+  <h1>Apply for <span class="gradient-text">Admission</span></h1>
+  <p>Fill out the form below — it only takes 2 minutes!</p>
+</div>
+
+<section style="background:var(--bg);">
+  <div class="admission-wrap">
+    <div class="form-steps-wrap">
+      <!-- Step Indicators -->
+      <div class="step-indicators">
+        <div class="step-dot-wrap"><div class="step-dot active" id="dot1">1</div><span class="step-label">Personal Info</span></div>
+        <div class="step-dot-wrap"><div class="step-dot" id="dot2">2</div><span class="step-label">Course Details</span></div>
+        <div class="step-dot-wrap"><div class="step-dot" id="dot3">3</div><span class="step-label">Review & Submit</span></div>
+      </div>
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressBar"></div></div>
+
+      <!-- STEP 1 -->
+      <div class="form-step active" id="step1">
+        <div class="form-card">
+          <h3 style="margin-bottom:1.5rem;">Personal Information</h3>
+          <div class="form-row">
+            <div class="form-group"><label>Full Name *</label><input type="text" id="fname" placeholder="Enter your full name"/></div>
+            <div class="form-group"><label>Father's Name *</label><input type="text" id="fathername" placeholder="Enter father's name"/></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Date of Birth *</label><input type="date" id="dob"/></div>
+            <div class="form-group"><label>Gender *</label>
+              <select id="gender"><option value="">Select Gender</option><option>Male</option><option>Female</option><option>Other</option></select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Phone Number *</label><input type="tel" id="phone" placeholder="10-digit mobile number"/></div>
+            <div class="form-group"><label>Email Address</label><input type="email" id="email" placeholder="your@email.com (optional)"/></div>
+          </div>
+          <div class="form-group"><label>Address *</label><textarea id="address" placeholder="Enter your full address" style="min-height:80px;"></textarea></div>
+          <div class="form-nav"><div></div><button class="btn-primary" onclick="validateStep1()">Next Step →</button></div>
+        </div>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step" id="step2">
+        <div class="form-card">
+          <h3 style="margin-bottom:1.5rem;">Course & Academic Details</h3>
+          <div class="form-group"><label>Select Course *</label>
+            <select id="course">
+              <option value="">-- Choose a Course --</option>
+              <option>Basic Computer (3 Months)</option>
+              <option>Tally with GST (3 Months)</option>
+              <option>DTP (2 Months)</option>
+              <option>Hindi & English Typing (2 Months)</option>
+              <option>Online Work (1 Month)</option>
+              <option>CPCT Preparation (3 Months)</option>
+              <option>Web Designing (4 Months)</option>
+              <option>C, C++, Python, HTML, PHP, CSS, Java (6 Months)</option>
+              <option>DCA - Diploma in Computer Applications (1 Year)</option>
+              <option>PGDCA - PG Diploma in Computer Applications (2 Years)</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Preferred Batch Timing</label>
+              <select id="batch"><option value="">Select Timing</option><option>Morning (9AM–11AM)</option><option>Afternoon (12PM–2PM)</option><option>Evening (4PM–6PM)</option></select>
+            </div>
+            <div class="form-group"><label>Previous Qualification *</label>
+              <select id="qualification"><option value="">Select</option><option>8th Pass</option><option>10th Pass</option><option>12th Pass</option><option>Graduate</option><option>Post Graduate</option></select>
+            </div>
+          </div>
+          <div class="form-group"><label>Any Additional Message</label><textarea id="msg" placeholder="Any specific requirements or questions?" style="min-height:80px;"></textarea></div>
+          <div class="form-nav">
+            <button class="btn-outline" onclick="goStep(1)">← Back</button>
+            <button class="btn-primary" onclick="validateStep2()">Review Application →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step" id="step3">
+        <div class="form-card">
+          <h3 style="margin-bottom:1rem;">Review Your Application</h3>
+          <p style="color:var(--text2);font-size:.9rem;margin-bottom:1.5rem;">Please verify your details before submitting.</p>
+          <table class="review-table" id="reviewTable"></table>
+          <div style="background:var(--glass2);border:1px solid var(--border);border-radius:12px;padding:1rem;margin-top:1.5rem;font-size:.85rem;color:var(--text2);">
+            ✅ By submitting, you agree that ISP Computer Institute may contact you regarding your admission. Fees are to be paid at the institute.
+          </div>
+          <div class="form-nav">
+            <button class="btn-outline" onclick="goStep(2)">← Back</button>
+            <button class="btn-primary" onclick="submitForm()">Submit Application 🚀</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div id="successMsg">
+      <div class="big-check">🎉</div>
+      <h2>Application <span class="gradient-text">Submitted!</span></h2>
+      <p>Thank you for applying to ISP Computer Institute!<br/>Our team will contact you within 24 hours.</p>
+      <p style="margin-top:1rem;">📞 For immediate assistance: <a href="tel:09424534563" style="color:var(--cyan);">094245 34563</a></p>
+      <a href="index.html" class="btn-primary" style="margin-top:2rem;">🏠 Back to Home</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:.75rem;display:inline-flex;">
+        <div class="nav-logo-icon">ISP</div>
+        <div class="nav-logo-text">ISP <span>Institute</span></div>
+      </a>
+      <p>Professional computer education in Katni, M.P.</p>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="courses.html">Courses</a></li>
+      <li><a href="admission.html">Admission</a></li><li><a href="certificate.html">Certificate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:09424534563">📞 094245 34563</a></li>
+      <li><a href="#">📍 Katni, M.P.</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2025 <span>ISP Computer Institute</span>, Katni M.P.</div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function validateStep1(){
+  const name=document.getElementById('fname').value.trim();
+  const phone=document.getElementById('phone').value.trim();
+  const address=document.getElementById('address').value.trim();
+  if(!name||!phone||!address){alert('Please fill in all required fields (*).');return;}
+  if(phone.length<10){alert('Please enter a valid 10-digit phone number.');return;}
+  goStep(2);
+}
+function validateStep2(){
+  const course=document.getElementById('course').value;
+  const qual=document.getElementById('qualification').value;
+  if(!course||!qual){alert('Please select a course and your qualification.');return;}
+  buildReview();goStep(3);
+}
+function buildReview(){
+  const fields={
+    'Full Name':document.getElementById('fname').value,
+    "Father's Name":document.getElementById('fathername').value,
+    'Date of Birth':document.getElementById('dob').value,
+    'Gender':document.getElementById('gender').value,
+    'Phone':document.getElementById('phone').value,
+    'Email':document.getElementById('email').value||'Not provided',
+    'Address':document.getElementById('address').value,
+    'Course':document.getElementById('course').value,
+    'Batch Timing':document.getElementById('batch').value||'Not specified',
+    'Qualification':document.getElementById('qualification').value,
+  };
+  let html='';
+  for(const[k,v] of Object.entries(fields)){
+    html+=`<tr><td>${k}</td><td>${v}</td></tr>`;
+  }
+  document.getElementById('reviewTable').innerHTML=html;
+}
+</script>
+</body>
+</html>

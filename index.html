@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ISP Computer Institute | Best Computer Training in Katni, M.P.</title>
+<meta name="description" content="ISP Computer Institute Katni — professional computer courses including DCA, PGDCA, Tally, Web Design, Python, C++. Enroll today!"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" onclick="closeMobile()">✕</button>
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="courses.html" onclick="closeMobile()">Courses</a>
+  <a href="admission.html" onclick="closeMobile()">Admission</a>
+  <a href="certificate.html" onclick="closeMobile()">Certificate</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">ISP</div>
+    <div class="nav-logo-text">ISP <span>Institute</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="admission.html">Admission</a></li>
+    <li><a href="certificate.html">Certificate</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="admission.html" class="nav-cta">Enroll Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMobile()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO with Three.js -->
+<section id="hero">
+  <canvas id="three-canvas"></canvas>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      🎓 No. 1 Computer Institute in Katni
+    </div>
+    <h1 class="hero-title glitch" data-text="Learn Future-Ready">
+      Learn <span class="gradient-text">Future-Ready</span>
+      <span class="line2">Computer Skills</span>
+    </h1>
+    <p class="hero-sub">
+      Professional computer training with industry-recognized certificates.<br/>
+      Join <strong style="color:var(--cyan)">2000+</strong> students who built their careers at ISP Institute, Katni.
+    </p>
+    <div class="hero-btns">
+      <a href="admission.html" class="btn-primary">🚀 Apply for Admission</a>
+      <a href="courses.html" class="btn-outline">📚 Explore Courses</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="stats-grid">
+    <div class="stat-card reveal reveal-delay-1">
+      <div class="stat-glow"></div>
+      <div class="stat-num gradient-text" data-target="2000" data-suffix="+">0</div>
+      <div class="stat-label">Students Enrolled</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-2">
+      <div class="stat-glow"></div>
+      <div class="stat-num gradient-text" data-target="10">0</div>
+      <div class="stat-label">Courses Offered</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-3">
+      <div class="stat-glow"></div>
+      <div class="stat-num gradient-text" data-target="10" data-suffix="+">0</div>
+      <div class="stat-label">Years of Excellence</div>
+    </div>
+    <div class="stat-card reveal reveal-delay-4">
+      <div class="stat-glow"></div>
+      <div class="stat-num gradient-text" data-target="95" data-suffix="%">0</div>
+      <div class="stat-label">Placement Rate</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-3d-card reveal left" id="aboutCard">
+      <div class="neon-line"></div>
+      <span class="about-icon">🖥️</span>
+      <h3>ISP Computer Institute</h3>
+      <p>Your trusted partner for professional IT education in Katni, Madhya Pradesh since 2014.</p>
+      <div class="info-row"><span class="info-icon">📍</span><span>Katni, Madhya Pradesh, India</span></div>
+      <div class="info-row"><span class="info-icon">📞</span><a href="tel:09424534563">094245 34563</a></div>
+      <div class="info-row"><span class="info-icon">🕘</span><span>Mon–Sat: 9:00 AM – 7:00 PM</span></div>
+      <div class="info-row"><span class="info-icon">🎓</span><span>Govt. Recognized Certificates</span></div>
+    </div>
+    <div class="about-text reveal right">
+      <span class="section-tag">About Us</span>
+      <h2>Empowering Students with <span class="gradient-text">Digital Skills</span></h2>
+      <p>ISP Computer Institute has been at the forefront of IT education in Katni for over a decade. We offer job-oriented courses designed by industry experts to help students build successful careers.</p>
+      <p>From basic computer literacy to advanced programming languages — our expert faculty ensures every student gets practical, hands-on training.</p>
+      <div class="features-grid">
+        <div class="feature-item">Expert Faculty</div>
+        <div class="feature-item">Govt. Recognized Certificates</div>
+        <div class="feature-item">Modern Lab Facilities</div>
+        <div class="feature-item">Placement Assistance</div>
+        <div class="feature-item">Flexible Batch Timings</div>
+        <div class="feature-item">Affordable Fees</div>
+      </div>
+      <div style="margin-top:2rem;">
+        <a href="contact.html" class="btn-primary">Get in Touch →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section id="courses-section">
+  <div class="section-header">
+    <span class="section-tag">Our Programs</span>
+    <h2 class="section-title">Courses We <span class="gradient-text">Offer</span></h2>
+    <p class="section-sub">Hover over each card to flip it and see full details. All courses come with a recognized certificate.</p>
+  </div>
+  <div class="courses-grid">
+    <div class="course-card reveal reveal-delay-1">
+      <div class="course-inner">
+        <div class="course-front">
+          <div><span class="c-icon">💻</span><div class="c-name">Basic Computer</div></div>
+          <span class="c-level">Beginner · 3 Months</span>
+        </div>
+        <div class="course-back">
+          <div>
+            <div class="c-back-title">Basic Computer</div>
+            <div class="c-back-desc">MS Office, Internet, Email, basic typing. The perfect foundation for anyone entering the digital world.</div>
+          </div>
+          <a href="admission.html" class="c-enroll">Enroll Now →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal reveal-delay-2">
+      <div class="course-inner">
+        <div class="course-front">
+          <div><span class="c-icon">📊</span><div class="c-name">Tally with GST</div></div>
+          <span class="c-level">Beginner · 3 Months</span>
+        </div>
+        <div class="course-back">
+          <div>
+            <div class="c-back-title">Tally with GST</div>
+            <div class="c-back-desc">Complete accounting with Tally ERP 9 & TallyPrime. GST filing, billing, payroll & inventory management.</div>
+          </div>
+          <a href="admission.html" class="c-enroll">Enroll Now →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal reveal-delay-3">
+      <div class="course-inner">
+        <div class="course-front">
+          <div><span class="c-icon">🎨</span><div class="c-name">DTP</div></div>
+          <span class="c-level">Beginner · 2 Months</span>
+        </div>
+        <div class="course-back">
+          <div>
+            <div class="c-back-title">Desktop Publishing</div>
+            <div class="c-back-desc">Photoshop, CorelDraw, PageMaker. Design banners, visiting cards, brochures & publications professionally.</div>
+          </div>
+          <a href="admission.html" class="c-enroll">Enroll Now →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal reveal-delay-1">
+      <div class="course-inner">
+        <div class="course-front">
+          <div><span class="c-icon">⌨️</span><div class="c-name">Hindi & English Typing</div></div>
+          <span class="c-level">All Levels · 2 Months</span>
+        </div>
+        <div class="course-back">
+          <div>
+            <div class="c-back-title">Typing Mastery</div>
+            <div class="c-back-desc">Speed & accuracy in Hindi (Kruti Dev/Mangal) and English. Essential for govt exam & data entry jobs.</div>
+          </div>
+          <a href="admission.html" class="c-enroll">Enroll Now →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal reveal-delay-2">
+      <div class="course-inner">
+        <div class="course-front">
+          <div><span class="c-icon">🌐</span><div class="c-name">Web Designing</div></div>
+          <span class="c-level">Intermediate · 4 Months</span>
+        </div>
+        <div class="course-back">
+          <div>
+            <div class="c-back-title">Web Designing</div>
+            <div class="c-back-desc">HTML5, CSS3, JavaScript & responsive design. Build real professional websites from scratch.</div>
+          </div>
+          <a href="admission.html" class="c-enroll">Enroll Now →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal reveal-delay-3">
+      <div class="course-inner">
+        <div class="course-front">
+          <div><span class="c-icon">🏛️</span><div class="c-name">CPCT Preparation</div></div>
+          <span class="c-level">Intermediate · 3 Months</span>
+        </div>
+        <div class="course-back">
+          <div>
+            <div class="c-back-title">CPCT Prep</div>
+            <div class="c-back-desc">Complete CPCT exam prep for MP Govt jobs. Computer knowledge + typing with mock tests.</div>
+          </div>
+          <a href="admission.html" class="c-enroll">Enroll Now →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal reveal-delay-1">
+      <div class="course-inner">
+        <div class="course-front">
+          <div><span class="c-icon">🐍</span><div class="c-name">C, C++, Python, Java</div></div>
+          <span class="c-level">Advanced · 6 Months</span>
+        </div>
+        <div class="course-back">
+          <div>
+            <div class="c-back-title">Programming Languages</div>
+            <div class="c-back-desc">C, C++, Python, Java, PHP, HTML, CSS. OOP, data structures, algorithms & real projects.</div>
+          </div>
+          <a href="admission.html" class="c-enroll">Enroll Now →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal reveal-delay-2">
+      <div class="course-inner">
+        <div class="course-front">
+          <div><span class="c-icon">🎓</span><div class="c-name">DCA</div></div>
+          <span class="c-level">Intermediate · 1 Year</span>
+        </div>
+        <div class="course-back">
+          <div>
+            <div class="c-back-title">Diploma in Computer Applications</div>
+            <div class="c-back-desc">Comprehensive 1-year diploma: MS Office, internet, accounting, database & programming basics.</div>
+          </div>
+          <a href="admission.html" class="c-enroll">Enroll Now →</a>
+        </div>
+      </div>
+    </div>
+    <div class="course-card reveal reveal-delay-3">
+      <div class="course-inner">
+        <div class="course-front">
+          <div><span class="c-icon">🏆</span><div class="c-name">PGDCA</div></div>
+          <span class="c-level">Advanced · 2 Years</span>
+        </div>
+        <div class="course-back">
+          <div>
+            <div class="c-back-title">PG Diploma in Computer Applications</div>
+            <div class="c-back-desc">Our highest qualification. Advanced programming, networking, database & full project work.</div>
+          </div>
+          <a href="admission.html" class="c-enroll">Enroll Now →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:3rem;">
+    <a href="courses.html" class="btn-primary reveal">View All Courses →</a>
+  </div>
+</section>
+
+<!-- ADMISSION CTA -->
+<section id="admission-cta">
+  <div class="cta-inner reveal">
+    <span class="section-tag">Join Us Today</span>
+    <h2>Ready to Start Your <span class="gradient-text">Tech Career?</span></h2>
+    <p>Fill out our simple online admission form and secure your seat. New batches start every month — limited seats!</p>
+    <div class="cta-btns">
+      <a href="admission.html" class="btn-primary">📝 Apply Online Now</a>
+      <a href="tel:09424534563" class="btn-outline">📞 Call: 094245 34563</a>
+    </div>
+  </div>
+</section>
+
+<!-- CERT VERIFY -->
+<section id="cert-home">
+  <div class="cert-box reveal">
+    <span class="section-tag">Verification</span>
+    <h2 class="section-title">Verify Your <span class="gradient-text">Certificate</span></h2>
+    <p style="color:var(--text2)">Enter your roll number to instantly verify authenticity of your ISP certificate.</p>
+    <div class="cert-input-wrap">
+      <input type="text" id="quickCert" placeholder="Enter Certificate ID (e.g. ISP2025001)"/>
+      <a href="certificate.html" class="btn-primary" onclick="saveQuickCert()">🔍 Verify</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact-home">
+  <div class="section-header">
+    <span class="section-tag">Contact</span>
+    <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+  </div>
+  <div class="contact-wrap">
+    <div class="contact-cards reveal left">
+      <h3>We're Here to Help</h3>
+      <div class="c-card">
+        <div class="c-card-icon">📞</div>
+        <div class="c-card-text"><h4>Phone / WhatsApp</h4><a href="tel:09424534563">094245 34563</a></div>
+      </div>
+      <div class="c-card">
+        <div class="c-card-icon">📍</div>
+        <div class="c-card-text"><h4>Location</h4><p>Katni, Madhya Pradesh, India</p></div>
+      </div>
+      <div class="c-card">
+        <div class="c-card-icon">🕘</div>
+        <div class="c-card-text"><h4>Working Hours</h4><p>Mon–Sat: 9:00 AM – 7:00 PM</p></div>
+      </div>
+    </div>
+    <div class="contact-form reveal right">
+      <div class="form-group"><label>Your Name</label><input type="text" placeholder="Full name"/></div>
+      <div class="form-group"><label>Phone</label><input type="tel" placeholder="10-digit mobile number"/></div>
+      <div class="form-group"><label>Course Interested In</label>
+        <select>
+          <option>Select a course</option>
+          <option>Basic Computer</option><option>Tally with GST</option><option>DTP</option>
+          <option>Hindi & English Typing</option><option>Online Work</option><option>CPCT</option>
+          <option>Web Designing</option><option>C/C++/Python/Java</option><option>DCA</option><option>PGDCA</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message</label><textarea placeholder="Any questions?"></textarea></div>
+      <button class="btn-primary" style="width:100%;justify-content:center;" onclick="alert('Thank you! We will contact you soon.\n\nOr call: 094245 34563')">Send Message 📨</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">
+        <div class="nav-logo-icon">ISP</div>
+        <div class="nav-logo-text">ISP <span>Institute</span></div>
+      </a>
+      <p>Professional computer education in Katni, M.P. Building tomorrow's IT professionals today.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="admission.html">Admission</a></li>
+        <li><a href="certificate.html">Certificate</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:09424534563">📞 094245 34563</a></li>
+        <li><a>📍 Katni, M.P.</a></li>
+        <li><a>🕘 Mon–Sat 9AM–7PM</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 <span>ISP Computer Institute</span>, Katni M.P. | All Rights Reserved</div>
+</footer>
+
+<!-- THREE.JS CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- GSAP CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<script>
+// =========== THREE.JS HERO 3D SCENE ===========
+(function(){
+  const canvas = document.getElementById('three-canvas');
+  const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 100);
+  camera.position.set(0, 0, 5);
+
+  // Rotating wireframe torus knot
+  const geo1 = new THREE.TorusKnotGeometry(1.5, 0.4, 120, 16);
+  const mat1 = new THREE.MeshBasicMaterial({color:0x00f5ff, wireframe:true, transparent:true, opacity:0.15});
+  const torus = new THREE.Mesh(geo1, mat1);
+  torus.position.set(3.5, 0, -2);
+  scene.add(torus);
+
+  // Second torus
+  const geo2 = new THREE.TorusGeometry(1.2, 0.3, 16, 60);
+  const mat2 = new THREE.MeshBasicMaterial({color:0xb300ff, wireframe:true, transparent:true, opacity:0.12});
+  const torus2 = new THREE.Mesh(geo2, mat2);
+  torus2.position.set(-3.5, 0.5, -2);
+  scene.add(torus2);
+
+  // Icosahedron
+  const geo3 = new THREE.IcosahedronGeometry(1, 1);
+  const mat3 = new THREE.MeshBasicMaterial({color:0x00f5ff, wireframe:true, transparent:true, opacity:0.18});
+  const ico = new THREE.Mesh(geo3, mat3);
+  ico.position.set(0, -2.5, -1);
+  scene.add(ico);
+
+  // Particle field
+  const pCount = 300;
+  const pGeo = new THREE.BufferGeometry();
+  const positions = new Float32Array(pCount * 3);
+  for(let i = 0; i < pCount * 3; i++){
+    positions[i] = (Math.random() - 0.5) * 20;
+  }
+  pGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  const pMat = new THREE.PointsMaterial({color:0x00f5ff, size:0.04, transparent:true, opacity:0.6});
+  const particles = new THREE.Points(pGeo, pMat);
+  scene.add(particles);
+
+  // Mouse parallax
+  let mouseX = 0, mouseY = 0;
+  document.addEventListener('mousemove', e => {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+    mouseY = -(e.clientY / window.innerHeight - 0.5) * 2;
+  });
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+
+  let t = 0;
+  function animate(){
+    requestAnimationFrame(animate);
+    t += 0.005;
+    torus.rotation.x = t * 0.7;
+    torus.rotation.y = t;
+    torus2.rotation.x = t * 0.5;
+    torus2.rotation.z = t * 0.8;
+    ico.rotation.y = t * 0.6;
+    ico.rotation.x = t * 0.4;
+    particles.rotation.y = t * 0.05;
+    // Mouse parallax
+    camera.position.x += (mouseX * 0.3 - camera.position.x) * 0.05;
+    camera.position.y += (mouseY * 0.2 - camera.position.y) * 0.05;
+    camera.lookAt(scene.position);
+    renderer.render(scene, camera);
+  }
+  animate();
+})();
+
+// =========== GSAP ANIMATIONS ===========
+gsap.registerPlugin(ScrollTrigger);
+
+// Hero text
+gsap.from('.hero-badge', {duration:1, y:-30, opacity:0, ease:'back.out(1.7)', delay:.3});
+gsap.from('.hero-title', {duration:1.2, y:60, opacity:0, ease:'power3.out', delay:.5});
+gsap.from('.hero-sub', {duration:1, y:40, opacity:0, ease:'power2.out', delay:.8});
+gsap.from('.hero-btns', {duration:1, y:30, opacity:0, ease:'power2.out', delay:1});
+gsap.from('.hero-scroll', {duration:1, opacity:0, delay:1.5});
+
+// Stats cards
+gsap.utils.toArray('.stat-card').forEach((card, i) => {
+  gsap.from(card, {
+    scrollTrigger:{trigger:card, start:'top 85%'},
+    duration:.8, y:60, opacity:0, ease:'power3.out', delay:i*0.1
+  });
+});
+
+// Animate counters
+document.querySelectorAll('[data-target]').forEach(el => {
+  ScrollTrigger.create({
+    trigger: el,
+    start: 'top 80%',
+    once: true,
+    onEnter: () => {
+      const target = +el.dataset.target;
+      const suffix = el.dataset.suffix || '';
+      gsap.to({val:0}, {
+        val: target, duration: 2, ease:'power2.out',
+        onUpdate: function(){
+          el.textContent = Math.floor(this.targets()[0].val) + suffix;
+        }
+      });
+    }
+  });
+});
+
+// About 3D tilt
+const aboutCard = document.getElementById('aboutCard');
+if(aboutCard){
+  aboutCard.addEventListener('mousemove', e => {
+    const r = aboutCard.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - 0.5;
+    const y = (e.clientY - r.top) / r.height - 0.5;
+    gsap.to(aboutCard, {duration:.4, rotateY:x*20, rotateX:-y*15, ease:'power2.out', transformPerspective:800});
+  });
+  aboutCard.addEventListener('mouseleave', () => {
+    gsap.to(aboutCard, {duration:.8, rotateY:0, rotateX:0, ease:'elastic.out(1,0.5)'});
+  });
+}
+
+// Scroll reveal
+ScrollTrigger.batch('.reveal', {
+  start: 'top 85%',
+  onEnter: els => gsap.to(els, {opacity:1, y:0, x:0, stagger:.12, duration:.9, ease:'power3.out'}),
+  once: true
+});
+
+// Course cards hover glow effect
+document.querySelectorAll('.course-card').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    gsap.to(card, {scale:1.03, duration:.3, ease:'power2.out'});
+  });
+  card.addEventListener('mouseleave', () => {
+    gsap.to(card, {scale:1, duration:.4, ease:'power2.out'});
+  });
+});
+
+// Navbar scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// Mobile menu
+function openMobile(){ document.getElementById('mobileMenu').classList.add('open'); }
+function closeMobile(){ document.getElementById('mobileMenu').classList.remove('open'); }
+
+// Quick cert
+function saveQuickCert(){
+  const v = document.getElementById('quickCert').value.trim();
+  if(v) sessionStorage.setItem('certId', v);
+}
+</script>
+</body>
+</html>

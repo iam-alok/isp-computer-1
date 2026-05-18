@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Courses | ISP Computer Institute Katni</title>
+<meta name="description" content="Explore all computer courses at ISP Institute Katni — DCA, PGDCA, Tally, Web Designing, Python, C++, Typing, and more."/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.all-courses-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:2rem;max-width:1200px;margin:0 auto;}
+.full-course-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .3s,box-shadow .3s;}
+.full-course-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);}
+.fcc-header{padding:1.75rem 1.75rem 1rem;display:flex;align-items:center;gap:1rem;}
+.fcc-icon-wrap{width:56px;height:56px;background:var(--grad);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;flex-shrink:0;}
+.fcc-title{font-family:'Outfit',sans-serif;font-size:1.1rem;font-weight:700;}
+.fcc-duration{font-size:.8rem;color:var(--text2);margin-top:.2rem;}
+.fcc-body{padding:0 1.75rem 1.75rem;}
+.fcc-desc{color:var(--text2);font-size:.9rem;line-height:1.7;margin-bottom:1rem;}
+.fcc-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.25rem;}
+.fcc-tag{background:var(--glass2);border:1px solid var(--border);color:var(--cyan);font-size:.75rem;padding:.2rem .6rem;border-radius:50px;}
+.fcc-footer{display:flex;align-items:center;justify-content:space-between;}
+.fcc-level{font-size:.8rem;color:var(--text2);}
+.filter-bar{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;}
+.filter-btn{padding:.5rem 1.25rem;border:1px solid var(--border);background:var(--glass);color:var(--text2);border-radius:50px;cursor:pointer;font-size:.85rem;transition:all .3s;font-family:'Inter',sans-serif;}
+.filter-btn.active,.filter-btn:hover{background:var(--grad);color:#fff;border-color:transparent;}
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" onclick="closeMobile()">✕</button>
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="courses.html" onclick="closeMobile()">Courses</a>
+  <a href="admission.html" onclick="closeMobile()">Admission</a>
+  <a href="certificate.html" onclick="closeMobile()">Certificate</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">ISP</div>
+    <div class="nav-logo-text">ISP <span>Institute</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="courses.html" class="active">Courses</a></li>
+    <li><a href="admission.html">Admission</a></li>
+    <li><a href="certificate.html">Certificate</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="admission.html" class="nav-cta">Enroll Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMobile()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <span class="section-tag">All Programs</span>
+  <h1>Our <span class="gradient-text">Courses</span></h1>
+  <p>Choose from 10+ job-oriented programs designed by industry experts</p>
+</div>
+
+<section style="background:var(--bg);">
+  <div class="filter-bar">
+    <button class="filter-btn active" onclick="filterCourses('all',this)">All Courses</button>
+    <button class="filter-btn" onclick="filterCourses('beginner',this)">Beginner</button>
+    <button class="filter-btn" onclick="filterCourses('intermediate',this)">Intermediate</button>
+    <button class="filter-btn" onclick="filterCourses('advanced',this)">Advanced</button>
+  </div>
+  <div class="all-courses-grid" id="coursesGrid">
+    <div class="full-course-card reveal" data-level="beginner">
+      <div class="fcc-header">
+        <div class="fcc-icon-wrap">💻</div>
+        <div><div class="fcc-title">Basic Computer</div><div class="fcc-duration">⏱ 3 Months | Beginner</div></div>
+      </div>
+      <div class="fcc-body">
+        <p class="fcc-desc">Master the fundamentals of computers — MS Word, Excel, PowerPoint, Internet, Email, and basic typing. Ideal for absolute beginners.</p>
+        <div class="fcc-tags"><span class="fcc-tag">MS Office</span><span class="fcc-tag">Internet</span><span class="fcc-tag">Email</span><span class="fcc-tag">Typing</span></div>
+        <div class="fcc-footer"><span class="fcc-level">🟢 Beginner Level</span><a href="admission.html" class="btn-primary" style="padding:.5rem 1.1rem;font-size:.85rem;">Enroll →</a></div>
+      </div>
+    </div>
+    <div class="full-course-card reveal" data-level="beginner">
+      <div class="fcc-header">
+        <div class="fcc-icon-wrap">📊</div>
+        <div><div class="fcc-title">Tally with GST</div><div class="fcc-duration">⏱ 3 Months | Beginner</div></div>
+      </div>
+      <div class="fcc-body">
+        <p class="fcc-desc">Complete accounting training with Tally ERP 9 and TallyPrime. Covers GST filing, billing, payroll, inventory management, and financial reports.</p>
+        <div class="fcc-tags"><span class="fcc-tag">Tally ERP</span><span class="fcc-tag">GST Filing</span><span class="fcc-tag">Billing</span><span class="fcc-tag">Payroll</span></div>
+        <div class="fcc-footer"><span class="fcc-level">🟢 Beginner Level</span><a href="admission.html" class="btn-primary" style="padding:.5rem 1.1rem;font-size:.85rem;">Enroll →</a></div>
+      </div>
+    </div>
+    <div class="full-course-card reveal" data-level="beginner">
+      <div class="fcc-header">
+        <div class="fcc-icon-wrap">🎨</div>
+        <div><div class="fcc-title">DTP</div><div class="fcc-duration">⏱ 2 Months | Beginner</div></div>
+      </div>
+      <div class="fcc-body">
+        <p class="fcc-desc">Desktop Publishing with Photoshop, CorelDraw, and PageMaker. Create professional banners, visiting cards, brochures, and publications.</p>
+        <div class="fcc-tags"><span class="fcc-tag">Photoshop</span><span class="fcc-tag">CorelDraw</span><span class="fcc-tag">PageMaker</span></div>
+        <div class="fcc-footer"><span class="fcc-level">🟢 Beginner Level</span><a href="admission.html" class="btn-primary" style="padding:.5rem 1.1rem;font-size:.85rem;">Enroll →</a></div>
+      </div>
+    </div>
+    <div class="full-course-card reveal" data-level="beginner">
+      <div class="fcc-header">
+        <div class="fcc-icon-wrap">⌨️</div>
+        <div><div class="fcc-title">Hindi & English Typing</div><div class="fcc-duration">⏱ 2 Months | All Levels</div></div>
+      </div>
+      <div class="fcc-body">
+        <p class="fcc-desc">Build speed and accuracy in both Hindi (Kruti Dev/Mangal) and English typing. Essential for government job aspirants and data entry professionals.</p>
+        <div class="fcc-tags"><span class="fcc-tag">Hindi Typing</span><span class="fcc-tag">English Typing</span><span class="fcc-tag">Speed Test</span></div>
+        <div class="fcc-footer"><span class="fcc-level">🟢 All Levels</span><a href="admission.html" class="btn-primary" style="padding:.5rem 1.1rem;font-size:.85rem;">Enroll →</a></div>
+      </div>
+    </div>
+    <div class="full-course-card reveal" data-level="beginner">
+      <div class="fcc-header">
+        <div class="fcc-icon-wrap">💼</div>
+        <div><div class="fcc-title">Online Work</div><div class="fcc-duration">⏱ 1 Month | All Levels</div></div>
+      </div>
+      <div class="fcc-body">
+        <p class="fcc-desc">Learn to earn online! Covers freelancing, data entry jobs, government e-services, online forms, digital payments, and work-from-home skills.</p>
+        <div class="fcc-tags"><span class="fcc-tag">Freelancing</span><span class="fcc-tag">Data Entry</span><span class="fcc-tag">E-Services</span></div>
+        <div class="fcc-footer"><span class="fcc-level">🟢 All Levels</span><a href="admission.html" class="btn-primary" style="padding:.5rem 1.1rem;font-size:.85rem;">Enroll →</a></div>
+      </div>
+    </div>
+    <div class="full-course-card reveal" data-level="intermediate">
+      <div class="fcc-header">
+        <div class="fcc-icon-wrap">🏛️</div>
+        <div><div class="fcc-title">CPCT Preparation</div><div class="fcc-duration">⏱ 3 Months | Intermediate</div></div>
+      </div>
+      <div class="fcc-body">
+        <p class="fcc-desc">Comprehensive CPCT exam preparation for MP government jobs. Covers computer knowledge, MS Office, internet, Hindi & English typing with mock tests.</p>
+        <div class="fcc-tags"><span class="fcc-tag">CPCT Exam</span><span class="fcc-tag">Govt Jobs</span><span class="fcc-tag">Mock Tests</span><span class="fcc-tag">Typing</span></div>
+        <div class="fcc-footer"><span class="fcc-level">🟡 Intermediate</span><a href="admission.html" class="btn-primary" style="padding:.5rem 1.1rem;font-size:.85rem;">Enroll →</a></div>
+      </div>
+    </div>
+    <div class="full-course-card reveal" data-level="intermediate">
+      <div class="fcc-header">
+        <div class="fcc-icon-wrap">🌐</div>
+        <div><div class="fcc-title">Web Designing</div><div class="fcc-duration">⏱ 4 Months | Intermediate</div></div>
+      </div>
+      <div class="fcc-body">
+        <p class="fcc-desc">Build professional websites from scratch using HTML5, CSS3, JavaScript, and responsive design techniques. Create a portfolio of real projects.</p>
+        <div class="fcc-tags"><span class="fcc-tag">HTML5</span><span class="fcc-tag">CSS3</span><span class="fcc-tag">JavaScript</span><span class="fcc-tag">Responsive</span></div>
+        <div class="fcc-footer"><span class="fcc-level">🟡 Intermediate</span><a href="admission.html" class="btn-primary" style="padding:.5rem 1.1rem;font-size:.85rem;">Enroll →</a></div>
+      </div>
+    </div>
+    <div class="full-course-card reveal" data-level="advanced">
+      <div class="fcc-header">
+        <div class="fcc-icon-wrap">🐍</div>
+        <div><div class="fcc-title">C, C++, Python, HTML, PHP, CSS, Java</div><div class="fcc-duration">⏱ 6 Months | Advanced</div></div>
+      </div>
+      <div class="fcc-body">
+        <p class="fcc-desc">Master multiple programming languages including C, C++, Python, Java, PHP, HTML & CSS. Covers OOP, data structures, algorithms, and real projects.</p>
+        <div class="fcc-tags"><span class="fcc-tag">Python</span><span class="fcc-tag">C/C++</span><span class="fcc-tag">Java</span><span class="fcc-tag">PHP</span><span class="fcc-tag">OOP</span></div>
+        <div class="fcc-footer"><span class="fcc-level">🔴 Advanced</span><a href="admission.html" class="btn-primary" style="padding:.5rem 1.1rem;font-size:.85rem;">Enroll →</a></div>
+      </div>
+    </div>
+    <div class="full-course-card reveal" data-level="intermediate">
+      <div class="fcc-header">
+        <div class="fcc-icon-wrap">🎓</div>
+        <div><div class="fcc-title">DCA</div><div class="fcc-duration">⏱ 1 Year | Intermediate</div></div>
+      </div>
+      <div class="fcc-body">
+        <p class="fcc-desc">Diploma in Computer Applications — a comprehensive 1-year program covering MS Office, internet, accounting, database management, and programming basics.</p>
+        <div class="fcc-tags"><span class="fcc-tag">MS Office</span><span class="fcc-tag">Database</span><span class="fcc-tag">Programming</span><span class="fcc-tag">Accounting</span></div>
+        <div class="fcc-footer"><span class="fcc-level">🟡 Intermediate</span><a href="admission.html" class="btn-primary" style="padding:.5rem 1.1rem;font-size:.85rem;">Enroll →</a></div>
+      </div>
+    </div>
+    <div class="full-course-card reveal" data-level="advanced">
+      <div class="fcc-header">
+        <div class="fcc-icon-wrap">🏆</div>
+        <div><div class="fcc-title">PGDCA</div><div class="fcc-duration">⏱ 2 Years | Advanced</div></div>
+      </div>
+      <div class="fcc-body">
+        <p class="fcc-desc">Post Graduate Diploma in Computer Applications — our highest qualification program covering advanced software development, database, networking, and project work.</p>
+        <div class="fcc-tags"><span class="fcc-tag">Advanced Programming</span><span class="fcc-tag">Networking</span><span class="fcc-tag">Database</span><span class="fcc-tag">Project</span></div>
+        <div class="fcc-footer"><span class="fcc-level">🔴 Advanced</span><a href="admission.html" class="btn-primary" style="padding:.5rem 1.1rem;font-size:.85rem;">Enroll →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg2);text-align:center;">
+  <div style="max-width:600px;margin:0 auto;">
+    <h2 class="section-title">Still Confused? <span class="gradient-text">Talk to Us!</span></h2>
+    <p style="color:var(--text2);margin-bottom:2rem;">Our counselors will help you choose the right course for your career goals.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="tel:09424534563" class="btn-primary">📞 Call: 094245 34563</a>
+      <a href="admission.html" class="btn-outline">📝 Apply Now</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:.75rem;display:inline-flex;">
+        <div class="nav-logo-icon">ISP</div>
+        <div class="nav-logo-text">ISP <span>Institute</span></div>
+      </a>
+      <p>Professional computer education in Katni, M.P.</p>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="courses.html">Courses</a></li>
+      <li><a href="admission.html">Admission</a></li><li><a href="certificate.html">Certificate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:09424534563">📞 094245 34563</a></li>
+      <li><a href="#">📍 Katni, M.P.</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2025 <span>ISP Computer Institute</span>, Katni M.P.</div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function filterCourses(level,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.full-course-card').forEach(c=>{
+    if(level==='all'||c.dataset.level===level){c.style.display='block';}
+    else{c.style.display='none';}
+  });
+}
+</script>
+</body>
+</html>

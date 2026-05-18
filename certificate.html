@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Certificate Verification | ISP Computer Institute Katni</title>
+<meta name="description" content="Verify your ISP Computer Institute certificate online. Enter your roll number or certificate ID to check authenticity."/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.cert-verify-wrap{max-width:700px;margin:0 auto;}
+.cert-input-box{background:var(--glass);border:1px solid var(--border);border-radius:24px;padding:2.5rem;text-align:center;}
+.cert-input-big{width:100%;padding:1rem 1.5rem;background:var(--bg);border:2px solid var(--border);border-radius:50px;color:var(--text);font-size:1.1rem;outline:none;text-align:center;letter-spacing:.05em;transition:border-color .3s;font-family:'Inter',sans-serif;margin:1.5rem 0;}
+.cert-input-big:focus{border-color:var(--cyan);box-shadow:0 0 20px rgba(0,212,255,.15);}
+.sample-ids{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.5rem;}
+.sample-id-btn{padding:.3rem .8rem;background:var(--glass2);border:1px solid var(--border);border-radius:50px;color:var(--cyan);font-size:.8rem;cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif;}
+.sample-id-btn:hover{background:var(--cyan);color:var(--bg);}
+#certResult{margin-top:2rem;display:none;}
+.cert-found{background:var(--glass);border:1px solid rgba(0,212,255,.3);border-radius:24px;padding:2.5rem;text-align:center;}
+.cert-check{font-size:4rem;margin-bottom:1rem;}
+.cert-found h3{font-size:1.8rem;margin-bottom:1.5rem;color:var(--cyan);}
+.cert-details{background:var(--bg2);border-radius:16px;overflow:hidden;margin-bottom:1.5rem;text-align:left;}
+.cert-row{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.25rem;border-bottom:1px solid var(--border);}
+.cert-row:last-child{border-bottom:none;}
+.cert-row span{color:var(--text2);font-size:.9rem;}
+.cert-row strong{font-size:.95rem;}
+.cert-issued{color:var(--text2);font-size:.85rem;font-style:italic;}
+.cert-notfound{background:var(--glass);border:1px solid rgba(255,100,100,.2);border-radius:24px;padding:2.5rem;text-align:center;}
+.cert-notfound h3{font-size:1.5rem;margin:1rem 0 .5rem;color:#ff6b6b;}
+.cert-notfound p{color:var(--text2);}
+.cert-badge{display:inline-block;background:var(--grad);color:#fff;padding:.3rem .9rem;border-radius:50px;font-size:.8rem;font-weight:600;margin-top:1rem;}
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" onclick="closeMobile()">✕</button>
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="courses.html" onclick="closeMobile()">Courses</a>
+  <a href="admission.html" onclick="closeMobile()">Admission</a>
+  <a href="certificate.html" onclick="closeMobile()">Certificate</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">ISP</div>
+    <div class="nav-logo-text">ISP <span>Institute</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="admission.html">Admission</a></li>
+    <li><a href="certificate.html" class="active">Certificate</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="admission.html" class="nav-cta">Enroll Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMobile()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <span class="section-tag">Instant Verification</span>
+  <h1>Certificate <span class="gradient-text">Verification</span></h1>
+  <p>Verify the authenticity of any ISP Institute certificate instantly</p>
+</div>
+
+<section style="background:var(--bg);">
+  <div class="cert-verify-wrap">
+    <div class="cert-input-box reveal">
+      <div style="font-size:3.5rem;margin-bottom:1rem;">🏅</div>
+      <h2 style="font-size:1.6rem;">Enter Certificate ID or Roll Number</h2>
+      <p style="color:var(--text2);margin-top:.5rem;font-size:.9rem;">Your certificate ID is printed on your ISP Institute certificate document.</p>
+      <input type="text" id="certInput" class="cert-input-big" placeholder="e.g. ISP2025001" onkeydown="if(event.key==='Enter')verifyCert()"/>
+      <p style="color:var(--text2);font-size:.85rem;margin-bottom:.75rem;">Try sample certificate IDs:</p>
+      <div class="sample-ids">
+        <button class="sample-id-btn" onclick="fillSample('ISP2025001')">ISP2025001</button>
+        <button class="sample-id-btn" onclick="fillSample('ISP2025002')">ISP2025002</button>
+        <button class="sample-id-btn" onclick="fillSample('ISP2024010')">ISP2024010</button>
+        <button class="sample-id-btn" onclick="fillSample('ISP2025003')">ISP2025003</button>
+      </div>
+      <button class="btn-primary" style="width:100%;justify-content:center;font-size:1rem;" onclick="verifyCert()">🔍 Verify Certificate</button>
+    </div>
+
+    <div id="certResult"></div>
+
+    <div style="margin-top:3rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;">
+      <div style="background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;text-align:center;">
+        <div style="font-size:2rem;margin-bottom:.5rem;">🔒</div>
+        <h4 style="margin-bottom:.3rem;">100% Secure</h4>
+        <p style="color:var(--text2);font-size:.85rem;">All certificates are digitally recorded and tamper-proof.</p>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;text-align:center;">
+        <div style="font-size:2rem;margin-bottom:.5rem;">⚡</div>
+        <h4 style="margin-bottom:.3rem;">Instant Results</h4>
+        <p style="color:var(--text2);font-size:.85rem;">Get instant verification results within seconds.</p>
+      </div>
+      <div style="background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:1.5rem;text-align:center;">
+        <div style="font-size:2rem;margin-bottom:.5rem;">📋</div>
+        <h4 style="margin-bottom:.3rem;">Complete Details</h4>
+        <p style="color:var(--text2);font-size:.85rem;">View student name, course, date, and grade information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:.75rem;display:inline-flex;">
+        <div class="nav-logo-icon">ISP</div>
+        <div class="nav-logo-text">ISP <span>Institute</span></div>
+      </a>
+      <p>Professional computer education in Katni, M.P.</p>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="courses.html">Courses</a></li>
+      <li><a href="admission.html">Admission</a></li><li><a href="certificate.html">Certificate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:09424534563">📞 094245 34563</a></li>
+      <li><a href="#">📍 Katni, M.P.</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2025 <span>ISP Computer Institute</span>, Katni M.P.</div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function fillSample(id){
+  document.getElementById('certInput').value=id;
+  document.getElementById('certInput').focus();
+}
+</script>
+</body>
+</html>

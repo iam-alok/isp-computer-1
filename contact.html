@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Contact Us | ISP Computer Institute Katni</title>
+<meta name="description" content="Contact ISP Computer Institute Katni. Call us at 094245 34563 or visit us in Katni, Madhya Pradesh. We are here to help!"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.map-wrap{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);margin-top:2rem;}
+.map-wrap iframe{display:block;width:100%;height:350px;filter:invert(90%) hue-rotate(180deg);}
+.faq-item{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:.75rem;}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.1rem 1.25rem;cursor:pointer;font-weight:500;transition:color .3s;}
+.faq-q:hover{color:var(--cyan);}
+.faq-q .arrow{transition:transform .3s;color:var(--cyan);}
+.faq-item.open .faq-q .arrow{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;}
+.faq-item.open .faq-a{max-height:200px;padding:0 1.25rem 1.1rem;}
+.faq-a p{color:var(--text2);font-size:.9rem;line-height:1.7;}
+</style>
+</head>
+<body>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" onclick="closeMobile()">✕</button>
+  <a href="index.html" onclick="closeMobile()">Home</a>
+  <a href="courses.html" onclick="closeMobile()">Courses</a>
+  <a href="admission.html" onclick="closeMobile()">Admission</a>
+  <a href="certificate.html" onclick="closeMobile()">Certificate</a>
+  <a href="contact.html" onclick="closeMobile()">Contact</a>
+</div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">ISP</div>
+    <div class="nav-logo-text">ISP <span>Institute</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="admission.html">Admission</a></li>
+    <li><a href="certificate.html">Certificate</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="admission.html" class="nav-cta">Enroll Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMobile()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <span class="section-tag">Get In Touch</span>
+  <h1>Contact <span class="gradient-text">ISP Institute</span></h1>
+  <p>We'd love to hear from you — reach out for admissions, course info, or any queries</p>
+</div>
+
+<section style="background:var(--bg);">
+  <div class="contact-grid" style="max-width:1100px;margin:0 auto;">
+    <div class="contact-info reveal">
+      <h3>Reach Us Directly</h3>
+      <div class="contact-card">
+        <div class="contact-card-icon">📞</div>
+        <div class="contact-card-text">
+          <h4>Phone / WhatsApp</h4>
+          <a href="tel:09424534563">094245 34563</a>
+          <p style="margin-top:.2rem;font-size:.8rem;">Available Mon–Sat, 9AM–7PM</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">📍</div>
+        <div class="contact-card-text">
+          <h4>Our Location</h4>
+          <p>ISP Computer Institute<br/>Katni, Madhya Pradesh, India</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">🕘</div>
+        <div class="contact-card-text">
+          <h4>Working Hours</h4>
+          <p>Monday – Saturday: 9:00 AM – 7:00 PM<br/>Sunday: Closed</p>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">🎓</div>
+        <div class="contact-card-text">
+          <h4>Admissions</h4>
+          <p>New batches start every month.<br/><a href="admission.html">Apply online</a> or visit us directly.</p>
+        </div>
+      </div>
+      <!-- MAP -->
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58813.21012!2d80.3944!3d23.8317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981a5ac26b3c5c5%3A0x7e3d7c8e8e8e8e8e!2sKatni%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1620000000000" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="contact-form-wrap">
+        <h3 style="margin-bottom:1.5rem;">Send Us a Message</h3>
+        <div class="form-group"><label>Your Name *</label><input type="text" id="cname" placeholder="Enter your full name"/></div>
+        <div class="form-group"><label>Phone Number *</label><input type="tel" id="cphone" placeholder="Enter your phone number"/></div>
+        <div class="form-group"><label>Subject</label>
+          <select id="csubject">
+            <option>Course Enquiry</option><option>Admission Information</option>
+            <option>Certificate Issue</option><option>Fee Structure</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message *</label><textarea id="cmsg" placeholder="Write your message here..." style="min-height:120px;"></textarea></div>
+        <button class="btn-primary" style="width:100%;justify-content:center;" onclick="sendContactMsg()">Send Message 📨</button>
+      </div>
+
+      <!-- FAQ -->
+      <div style="margin-top:2rem;">
+        <h3 style="margin-bottom:1.25rem;">Frequently Asked Questions</h3>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">What is the fee structure? <span class="arrow">▼</span></div>
+          <div class="faq-a"><p>Course fees vary by program. Please call us at 094245 34563 or visit the institute for current fee details. We offer affordable pricing with flexible payment options.</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">When do new batches start? <span class="arrow">▼</span></div>
+          <div class="faq-a"><p>New batches start every month. You can join at any time as we accommodate new students regularly. Contact us to know the next batch date.</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Do you provide placement assistance? <span class="arrow">▼</span></div>
+          <div class="faq-a"><p>Yes! We provide placement assistance and career guidance to our students. We have tie-ups with local businesses and organizations for job opportunities.</p></div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">Are certificates government recognized? <span class="arrow">▼</span></div>
+          <div class="faq-a"><p>Our certificates are recognized and valid for government job applications in Madhya Pradesh. CPCT preparation is specifically designed for MP government exams.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:.75rem;display:inline-flex;">
+        <div class="nav-logo-icon">ISP</div>
+        <div class="nav-logo-text">ISP <span>Institute</span></div>
+      </a>
+      <p>Professional computer education in Katni, M.P. Building tomorrow's IT professionals today.</p>
+    </div>
+    <div class="footer-col"><h4>Quick Links</h4><ul>
+      <li><a href="index.html">Home</a></li><li><a href="courses.html">Courses</a></li>
+      <li><a href="admission.html">Admission</a></li><li><a href="certificate.html">Certificate</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:09424534563">📞 094245 34563</a></li>
+      <li><a href="#">📍 Katni, M.P.</a></li>
+      <li><a href="#">🕘 Mon–Sat 9AM–7PM</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2025 <span>ISP Computer Institute</span>, Katni M.P. | All Rights Reserved</div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+function sendContactMsg(){
+  const name=document.getElementById('cname').value.trim();
+  const phone=document.getElementById('cphone').value.trim();
+  const msg=document.getElementById('cmsg').value.trim();
+  if(!name||!phone||!msg){alert('Please fill in all required fields.');return;}
+  alert(`Thank you, ${name}! We've received your message and will contact you at ${phone} soon.\n\nFor urgent queries: 094245 34563`);
+  document.getElementById('cname').value='';
+  document.getElementById('cphone').value='';
+  document.getElementById('cmsg').value='';
+}
+function toggleFaq(el){
+  const isOpen=el.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(f=>f.classList.remove('open'));
+  if(!isOpen)el.classList.add('open');
+}
+</script>
+</body>
+</html>
